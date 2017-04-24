@@ -1,0 +1,20 @@
+{
+  "name": "purescript-streams",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-prelude": "^3.0.0",
+    "purescript-console": "^3.0.0",
+    "purescript-control": "^3.0.0",
+    "purescript-tuples": "^4.0.0",
+    "purescript-distributive": "^3.0.0",
+    "purescript-tailrec": "purescript/purescript-tailrec",
+    "purescript-lists": "^4.0.1",
+    "purescript-unfoldable": "^3.0.0",
+    "purescript-nonempty": "^4.0.0"
+  }
+}
