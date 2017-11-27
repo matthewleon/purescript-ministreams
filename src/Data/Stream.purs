@@ -15,7 +15,7 @@ import Data.NonEmpty (NonEmpty, (:|))
 import Data.Tuple (Tuple(..), fst, snd)
 import Data.Unfoldable (class Unfoldable)
 
-data Stream a = Stream (Unit -> Tuple a (Stream a))
+newtype Stream a = Stream (Unit -> Tuple a (Stream a))
 
 instance showStream :: Show a => Show (Stream a) where
   show _ = "<Stream>" -- strings are strict in purescript :)
