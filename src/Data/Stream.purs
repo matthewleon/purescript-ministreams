@@ -15,7 +15,7 @@ import Data.NonEmpty (NonEmpty, (:|))
 import Data.Tuple (Tuple(..), fst, snd)
 import Data.Unfoldable (class Unfoldable)
 
-data Stream a = Stream (forall t. t -> Tuple a (Stream a))
+data Stream a = Stream (Unit -> Tuple a (Stream a))
 
 instance showStream :: Show a => Show (Stream a) where
   show _ = "<Stream>" -- strings are strict in purescript :)
@@ -64,7 +64,7 @@ cons x xs = Stream \_ -> Tuple x xs
 infixr 6 cons as :>
 
 step :: forall a. Stream a -> Tuple a (Stream a)
-step (Stream f) = f f
+step (Stream f) = f unit
 
 head :: forall a. Stream a -> a
 head = fst <<< step
